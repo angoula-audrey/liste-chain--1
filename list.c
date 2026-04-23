@@ -22,3 +22,13 @@ int main (){
     // Calling my created list.
     created_list();
 }
+
+// insert element at the begining of the list.
+list insert_top(list l,int val){
+    list new;
+    new = malloc(sizeof(cell));
+    new->value = val;
+    new->next = l;
+    l = new;
+    return l;
+}
