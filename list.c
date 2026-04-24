@@ -54,3 +54,25 @@ list insert_bottom(list l, int val){
     tmp = l;
     return l;
 }
+
+// Insertion at a particular position.
+list insert_pos(list l,int val,int pos){
+    list new;
+    new = mallloc(sizeof(cell));
+    new->value = val;
+
+    //test.
+    if(pos == 1 || l == NULL)
+        return insert_top(l,val);
+
+    list before;
+    list tmp;
+    int counter = 1;
+    while(counter != 3){
+        before->next == tmp;
+        tmp = tmp->next;
+        counter++;
+    }
+    before->next = new;
+    new->next = tmp;
+}
