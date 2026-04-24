@@ -25,10 +25,32 @@ int main (){
 
 // insert element at the begining of the list.
 list insert_top(list l,int val){
+    // Creation of the cell to insert.
     list new;
-    new = malloc(sizeof(cell));
+    new = malloc(sizeof(cell)); // Memory allocation of the cell.
     new->value = val;
     new->next = l;
     l = new;
+    return l;
+}
+
+// Insert element at the bottom.
+list insert_bottom(list l, int val){
+
+    // Creation of the cell to insert.
+    list new;
+    new = malloc(sizeof(cell));  // Memory allocation of the cell.
+    new->value = val;
+
+    if(l == NULL)
+        return insert_top(l, val);
+        list tmp = l;  // creation of the temporal list in other not to destroy the original one.
+
+        // tranversion of the list still the last element.
+    while(tmp->next != NULL){
+        tmp = tmp->next;
+    }
+    tmp->next = new;
+    tmp = l;
     return l;
 }
