@@ -76,3 +76,16 @@ list insert_pos(list l,int val,int pos){
     before->next = new;
     new->next = tmp;
 }
+
+// Display function.
+void display(list l){
+    if (l == NULL){
+        printf("The list is empty");
+        return;
+    }
+    while (l != NULL){
+        printf("%d, ",l->value);
+        l = l->next;
+    }
+    
+}
